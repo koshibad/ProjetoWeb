@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Fiap.DesenvolvimentoWeb.CadastroEventos.Models.TBEventos>
 
 @{
-    ViewBag.Title = "Listar";
+    ViewBag.Title = "Lista de Eventos";
 }
 
 <h2>Listar</h2>
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.Responsavel)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDEvento }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IDEvento }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDEvento })
+            @Html.ActionLink("Editar", "Editar", new { id=item.IDEvento }) |
+            @*@Html.ActionLink("Detalhar", "Detalhar", new { id=item.IDEvento }) |*@
+            @Html.ActionLink("Deletar", "Deletar", new { id=item.IDEvento })
         </td>
     </tr>
 }

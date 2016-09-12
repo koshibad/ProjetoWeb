@@ -24,5 +24,22 @@ namespace Fiap.DesenvolvimentoWeb.CadastroEventos.DAL
                 return ent.TBEventos.ToList<TBEventos>();
             }
         }
+
+        public static TBEventos BuscarEvento(int id)
+        {
+            using (var ent = new DBEVENTOSEntities())
+            {
+                return ent.TBEventos.FirstOrDefault(x => x.IDEvento == id);
+            }
+        }
+
+        public static void AlterarEvento(TBEventos evento)
+        {
+            using (var ent = new DBEVENTOSEntities())
+            {
+                ent.Entry<TBEventos>(evento).State = System.Data.Entity.EntityState.Modified;
+                ent.SaveChanges();
+            }
+        }
     }
 }

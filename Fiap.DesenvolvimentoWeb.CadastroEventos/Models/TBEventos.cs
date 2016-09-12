@@ -25,7 +25,7 @@ namespace Fiap.DesenvolvimentoWeb.CadastroEventos.Models
 
         [DisplayName("Data do Evento")]
         [Required(ErrorMessage = "A data é obrigatória")]
-        [DisplayFormat(DataFormatString = "0:dd/MM/yyyy", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public Nullable<System.DateTime> Data { get; set; }
 

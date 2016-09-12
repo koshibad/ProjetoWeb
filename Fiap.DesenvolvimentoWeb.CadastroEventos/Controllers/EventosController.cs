@@ -34,5 +34,26 @@ namespace Fiap.DesenvolvimentoWeb.CadastroEventos.Controllers
         {
             return View(EventosDb.ListarEventos());
         }
+
+        [HttpGet]
+        public ActionResult Editar(int? id)
+        {
+            if (id == null)
+                return RedirectToAction("Index", "Home");
+
+            return View(EventosDb.BuscarEvento((int)id));
+        }
+
+        [HttpPost]
+        public ActionResult Editar(int? id, TBEventos evento)
+        {
+            if (ModelState.IsValid)
+            {
+                EventosDb.AlterarEvento(evento);
+                return RedirectToAction("Listar");
+            }
+
+            return View(EventosDb.BuscarEvento((int)id));
+        }
     }
 }
