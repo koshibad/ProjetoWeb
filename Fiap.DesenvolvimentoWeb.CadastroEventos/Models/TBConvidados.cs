@@ -11,15 +11,19 @@ namespace Fiap.DesenvolvimentoWeb.CadastroEventos.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
     public partial class TBConvidados
     {
         public int IDConvidado { get; set; }
         public Nullable<int> IDEvento { get; set; }
+        [DisplayName("Nome")]
+        [Required(ErrorMessage = "O nome é obrigatório")]
         public string Convidado { get; set; }
         public string Telefone { get; set; }
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-    
+
         public virtual TBEventos TBEventos { get; set; }
     }
 }

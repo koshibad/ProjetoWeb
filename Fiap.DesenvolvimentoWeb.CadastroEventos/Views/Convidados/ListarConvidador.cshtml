@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Fiap.DesenvolvimentoWeb.CadastroEventos.Models.TBConvidados>
+
+@{
+    ViewBag.Title = "ListarConvidador";
+}
+
+<h2>ListarConvidador</h2>
+
+<p>
+    @using (Html.BeginForm("ListarConvidador", "Convidados", FormMethod.Get))
+    {
+        @Html.Label("Selecionar evento:")
+        @Html.DropDownList("idEvento", (SelectList)@ViewBag.TodosEventos, "Todos")
+        <input type="submit" value="Mostrar Convidados" class="btn btn-default" />
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Convidado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TBEventos.Descricao)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Convidado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.TBEventos.Descricao)*@
+                @Html.DisplayFor(modelItem => item.IDEvento)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IDConvidado }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IDConvidado }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IDConvidado })
+            </td>
+        </tr>
+    }
+
+</table>

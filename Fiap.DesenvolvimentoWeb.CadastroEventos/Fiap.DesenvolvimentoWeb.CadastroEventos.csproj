@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ConvidadosController.cs" />
     <Compile Include="Controllers\EventosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\EventosDb.cs" />
@@ -206,6 +207,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Eventos\Editar.cshtml" />
+    <Content Include="Views\Eventos\Excluir.cshtml" />
+    <Content Include="Views\Convidados\Cadastro.cshtml" />
+    <Content Include="Views\Convidados\ListarConvidador.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

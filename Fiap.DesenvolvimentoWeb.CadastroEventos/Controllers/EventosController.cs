@@ -23,7 +23,7 @@ namespace Fiap.DesenvolvimentoWeb.CadastroEventos.Controllers
             if (ModelState.IsValid)
             {
                 EventosDb.IncluirEvento(evento);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Listar");
             }
 
             return View();
@@ -54,6 +54,26 @@ namespace Fiap.DesenvolvimentoWeb.CadastroEventos.Controllers
             }
 
             return View(EventosDb.BuscarEvento((int)id));
+        }
+
+        [HttpGet]
+        public ActionResult Excluir(int? id)
+        {
+            if (id == null)
+                return RedirectToAction("Index", "Home");
+
+            return View(EventosDb.BuscarEvento((int)id));
+        }
+
+        [HttpPost]
+        public ActionResult Excluir(int? id, TBEventos evento)
+        {
+            if (id == null)
+                return RedirectToAction("Index", "Home");
+
+            evento.IDEvento = (int)id;
+            EventosDb.ExcluirEvento(evento);
+            return RedirectToAction("Listar");
         }
     }
 }
