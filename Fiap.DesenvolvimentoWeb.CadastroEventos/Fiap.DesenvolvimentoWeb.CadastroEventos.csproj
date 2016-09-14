@@ -209,7 +209,7 @@
     <Content Include="Views\Eventos\Editar.cshtml" />
     <Content Include="Views\Eventos\Excluir.cshtml" />
     <Content Include="Views\Convidados\Cadastro.cshtml" />
-    <Content Include="Views\Convidados\ListarConvidador.cshtml" />
+    <Content Include="Views\Convidados\ListarConvidados.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

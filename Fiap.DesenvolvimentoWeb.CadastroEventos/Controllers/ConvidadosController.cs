@@ -31,7 +31,7 @@ namespace Fiap.DesenvolvimentoWeb.CadastroEventos.Controllers
         }
 
         [HttpGet]
-        public ActionResult ListarConvidador(int? idEvento)
+        public ActionResult ListarConvidados(int? idEvento)
         {
             ViewBag.TodosEventos = new SelectList(EventosDb.ListarEventos(), "IDEvento", "Descricao");
             return View(EventosDb.ListarConvidados(idEvento));

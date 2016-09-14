@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Fiap.DesenvolvimentoWeb.CadastroEventos.Models.TBConvidados>
 
 @{
-    ViewBag.Title = "ListarConvidador";
+    ViewBag.Title = "ListarConvidados";
 }
 
 <h2>ListarConvidador</h2>
 
 <p>
-    @using (Html.BeginForm("ListarConvidador", "Convidados", FormMethod.Get))
+    @using (Html.BeginForm("ListarConvidados", "Convidados", FormMethod.Get))
     {
         @Html.Label("Selecionar evento:")
         @Html.DropDownList("idEvento", (SelectList)@ViewBag.TodosEventos, "Todos")
