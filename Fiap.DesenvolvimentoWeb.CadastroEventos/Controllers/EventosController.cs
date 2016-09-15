@@ -8,9 +8,9 @@ using System.Web.Mvc;
 
 namespace Fiap.DesenvolvimentoWeb.CadastroEventos.Controllers
 {
+    [Authorize]
     public class EventosController : Controller
     {
-        // GET: Eventos
         [HttpGet]
         public ActionResult Cadastro()
         {
@@ -30,6 +30,7 @@ namespace Fiap.DesenvolvimentoWeb.CadastroEventos.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult Listar()
         {
             return View(EventosDb.ListarEventos());
